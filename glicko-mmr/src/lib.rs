@@ -1,6 +1,5 @@
 use crate::config::Config;
 use crate::types::{CHMatch, Glicko2HistoryEntry};
-use rayon::prelude::*;
 use std::collections::HashMap;
 
 pub mod config;
@@ -25,7 +24,7 @@ pub async fn update_single_rating_period(
         }
     }
     Ok(account_matches
-        .into_par_iter()
+        .into_iter()
         .flat_map(|(account_id, matches)| {
             if process_all_matches {
                 glicko::update_player_ratings_all_matches(
@@ -34,17 +33,13 @@ pub async fn update_single_rating_period(
                     &matches,
                     player_ratings_before_rating_period,
                 )
-                .unwrap()
             } else {
-                vec![
-                    glicko::update_player_rating(
-                        config,
-                        account_id,
-                        &matches,
-                        player_ratings_before_rating_period,
-                    )
-                    .unwrap(),
-                ]
+                vec![glicko::update_player_rating(
+                    config,
+                    account_id,
+                    &matches,
+                    player_ratings_before_rating_period,
+                )]
             }
         })
         .collect::<Vec<_>>())

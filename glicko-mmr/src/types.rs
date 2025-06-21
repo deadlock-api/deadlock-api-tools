@@ -10,6 +10,7 @@ pub struct Glicko2HistoryEntry {
     pub match_id: u64,
     pub rating: f64,
     pub rating_deviation: f64,
+    pub rating_volatility: f64,
     #[serde(with = "clickhouse::serde::chrono::datetime")]
     pub start_time: DateTime<Utc>,
 }
