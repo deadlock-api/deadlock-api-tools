@@ -13,6 +13,6 @@ tokio = { version = "1.49.0", features = ["rt-multi-thread", "macros"] }
 tokio-util = { version = "0.7.18", features = ["io"] }
 metrics = "0.24.3"
 tracing = "0.1.44"
-anyhow = "1.0.100"
+anyhow = "1.0.101"
 object_store = { version = "0.13.1", features = ["aws"] }
 common = { version = "0.1.0", path = "../common" }
