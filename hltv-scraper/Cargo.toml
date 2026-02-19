@@ -8,12 +8,12 @@ anyhow = "1.0.101"
 axum = "0.8.8"
 base64 = "0.22.1"
 cached = { version = "0.56", features = ["async", "async_tokio_rt_multi_thread"] }
-clap = { version = "4.5.57", features = ["derive", "env"] }
+clap = { version = "4.5.60", features = ["derive", "env"] }
 dashmap = "6.1.0"
 fred = { version = "10.1.0", features = ["i-hexpire"] }
 haste = { git = "https://github.com/deadlock-api/haste.git", rev = "8bba1c3106624b5c5c6dbd1c04ac9a68647612f3" }
 itertools = "0.14.0"
-jiff = { version = "0.2.19", features = ["serde"] }
+jiff = { version = "0.2.20", features = ["serde"] }
 lru = "0.16.3"
 metrics = "0.24.3"
 object_store = { version = "0.13.1", features = ["aws"] }
@@ -25,6 +25,6 @@ tokio = { version = "1.49.0", features = ["rt-multi-thread", "macros"] }
 tracing = "0.1.44"
 valveprotos = { git = "https://github.com/deadlock-api/valveprotos-rs.git", rev = "bec6cd7d8b6bd2a10fc80d6df38637a37fd920e1", features = ["user-msgs"] }
 thiserror = "2.0.18"
-async-compression = { version = "0.4.39", features = ["tokio", "bzip2", "zstd"] }
+async-compression = { version = "0.4.40", features = ["tokio", "bzip2", "zstd"] }
 common = { version = "0.1.0", path = "../common" }
 sqlx = { version = "0.8.6", features = ["postgres", "runtime-tokio"] }
